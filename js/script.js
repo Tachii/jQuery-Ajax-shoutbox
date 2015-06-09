@@ -5,8 +5,8 @@ $(document).ready(function(){
 	$('#submit').on('click', function(){
 		var name = $('#name').val();
 		var message = $('#shout').val();
-		//var date = getDate();
-		//var dataString = 'name = '+ name +'&shout = '+ shout +'&date=' + date;
+		var date = getDate();
+		var dataString = 'name = '+ name +'&shout = '+ shout +'&date=' + date;
 		
 		//Validation
 		if(name == '' || shout == ''){
@@ -14,7 +14,7 @@ $(document).ready(function(){
 		} else {
 			$.ajax({
 				type: "POST",
-				url: "../shoutbox.php",
+				url: "../shoutbox/shoutbox.php",
 				data: dataString,
 				cache: false,
 				success: function(html){
