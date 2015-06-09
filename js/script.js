@@ -27,3 +27,16 @@ $(document).ready(function(){
 		return false;
 	});
 });
+
+//Format date to match MySql format
+function getDate(){
+	var date;
+	date = new Date;
+	date = date.getUTCFullYear() + '-' +
+			('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
+	 		('00' + (date.getUTCDate() + 1)).slice(-2) + ' ' +
+	 		('00' + (date.getUTCHours() + 1)).slice(-2) + ':' +
+	 		('00' + (date.getUTCMinutes() + 1)).slice(-2) + ':' +
+	 		('00' + (date.getUTCSeconds() + 1)).slice(-2);
+	return date;
+}
