@@ -32,7 +32,7 @@
 				<form>
 					<label>Name:</label>
 					<input type="text" id="name" />
-					<label>Shout Text:</label>
+					<label>Message :</label>
 					<input type="text" id="shout" />
 					<input type="submit" id="submit" value="SHOUT!" />
 				</form>
