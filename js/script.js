@@ -13,7 +13,13 @@ $(document).ready(function(){
 			alert('Please enter in your name and message');
 		} else {
 			$.ajax({
-				
+				type: "POST",
+				url: "../shoutbox.php",
+				data: dataString,
+				cache: false,
+				success: function(html){
+					$('#shouts ul').prepend(html);
+				} 
 			});
 		}
 		
