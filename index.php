@@ -29,7 +29,7 @@
 			<div id="shouts">
 				<ul>
 				<?php foreach($messages as $message): ?>
-					<li><?php echo $message['name']; ?></li>
+					<li><?php echo $message['name']; ?>: <?php echo $message['message']; ?></li>
 				<?php endforeach; ?>
 				</ul>
 			</div>
