@@ -12,7 +12,8 @@ $(document).ready(function(){
 		return date;
 	}
 	
-	$('#submit').on('click', function(){
+	$('#submit').on('click', function(e){
+		e.preventDefault();
 		var name = $('#name').val();
 		var message = $('#message').val();
 		var date = getDate();
@@ -23,7 +24,7 @@ $(document).ready(function(){
 			alert('Please enter in your name and message');
 		} else {
 			$.ajax({
-				type: "GET",
+				type: "POST",
 				url: "shoutbox.php",
 				data: dataString,
 				cache: false,
@@ -37,8 +38,5 @@ $(document).ready(function(){
 		       } 
 			});
 		}
-		
-		//Prevent Form from submitting
-		return false;
 	});
 });

@@ -31,9 +31,9 @@
 			<footer>
 				<form>
 					<label>Name:</label>
-					<input type="text" id="name"/>
+					<input type="text" id="name" name="name"/>
 					<label>Message :</label>
-					<input type="text" id="message"/>
+					<input type="text" id="message" name="message"/>
 					<input type="submit" id="submit" value="SHOUT!" />
 				</form>
 			</footer>
