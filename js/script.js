@@ -4,12 +4,12 @@
 $(document).ready(function(){
 	$('#submit').on('click', function(){
 		var name = $('#name').val();
-		var message = $('#shout').val();
+		var message = $('#message').val();
 		var date = getDate();
-		var dataString = 'name = '+ name +'&shout = '+ shout +'&date=' + date;
+		var dataString = 'name= '+ name +'&message= '+ message +'&date=' + date;
 		
 		//Validation
-		if(name == '' || shout == ''){
+		if(name == '' || message == ''){
 			alert('Please enter in your name and message');
 		} else {
 			$.ajax({

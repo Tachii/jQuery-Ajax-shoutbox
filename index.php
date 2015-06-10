@@ -1,4 +1,3 @@
-<?php include 'database.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -32,9 +31,9 @@
 			<footer>
 				<form>
 					<label>Name:</label>
-					<input type="text" id="name" />
+					<input type="text" id="name"/>
 					<label>Message :</label>
-					<input type="text" id="shout" />
+					<input type="text" id="message"/>
 					<input type="submit" id="submit" value="SHOUT!" />
 				</form>
 			</footer>
