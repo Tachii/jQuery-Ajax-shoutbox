@@ -15,9 +15,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="js/script.js"></script>
 		
-		<?php 
-			include 'get_messages.php';
-		?>
+		
 		
 	</head>
 
@@ -26,11 +24,11 @@
 			<header>
 				<h1>ShoutBox</h1>
 			</header>
-			<div id="shouts">
-				<ul>
-				<?php foreach($messages as $message): ?>
-					<li><?php echo $message['name']; ?>: <?php echo $message['message']; ?></li>
-				<?php endforeach; ?>
+			<div class="shouts">
+				<ul id="shouts">
+					<?php 
+						include 'get_messages.php';
+					?>
 				</ul>
 			</div>
 			<footer>

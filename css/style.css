@@ -23,7 +23,11 @@ header{
 	text-align:center;
 }
 
-#shouts{
+
+
+.shouts{
+	overflow:hidden;
+	overflow-y: scroll;
 	height:200px;
 	border:#333 1px solid;
 	margin:30px;

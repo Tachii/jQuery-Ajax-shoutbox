@@ -2,12 +2,6 @@
 include 'database.php';
 
 if(isset($_POST['name']) && isset($_POST['message'])){
-    $data = array( 
-        'name' => $_POST['name'], 
-        'shout' => $_POST['message'], 
-        'date' => $_POST['date']
-    );
-
     try {
         // NOTICE: prepare() used and VALUES instead of VALUE
         $sth = $dbh->prepare("INSERT INTO shouts (name, message, date) values (:name, :message, :date)");
@@ -18,6 +12,9 @@ if(isset($_POST['name']) && isset($_POST['message'])){
 
         // NOTICE: $data has allready been supplied by bindParam()
         $sth->execute();
+		
+		echo '<li>'.$_POST['name'].': '.$_POST['message'];
+		
     }
     catch(PDOException $e) {
         echo $e->getMessage();

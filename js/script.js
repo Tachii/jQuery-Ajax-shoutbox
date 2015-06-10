@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	$.ajaxSetup({cache:false});
+	
+	setInterval(function() {$('#shouts').load('get_messages.php');}, 2000);
 	//Format date to match MySql format
 	function getDate(){
 		var date;
@@ -12,8 +15,7 @@ $(document).ready(function(){
 		return date;
 	}
 	
-	$('#submit').on('click', function(e){
-		e.preventDefault();
+	$('#submit').on('click', function(){
 		var name = $('#name').val();
 		var message = $('#message').val();
 		var date = getDate();
@@ -38,5 +40,6 @@ $(document).ready(function(){
 		       } 
 			});
 		}
+		return false;
 	});
 });
