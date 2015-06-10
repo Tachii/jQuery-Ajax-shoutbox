@@ -15,6 +15,9 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="js/script.js"></script>
 		
+		<?php 
+			include 'get_messages.php';
+		?>
 		
 	</head>
 
@@ -25,7 +28,9 @@
 			</header>
 			<div id="shouts">
 				<ul>
-					<li></li>
+				<?php foreach($messages as $message): ?>
+					<li><?php echo $message['name']; ?></li>
+				<?php endforeach; ?>
 				</ul>
 			</div>
 			<footer>
