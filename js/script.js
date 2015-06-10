@@ -19,7 +19,12 @@ $(document).ready(function(){
 				cache: false,
 				success: function(html){
 					$('#shouts ul').prepend(html);
-				} 
+				},
+				error: function (xhr, ajaxOptions, thrownError) {
+		           console.log(xhr.status);
+		           console.log(xhr.responseText);
+		           console.log(thrownError);
+		       } 
 			});
 		}
 		
