@@ -1,5 +1,6 @@
 <?php 
-include 'database.php'; 
+error_reporting(E_ALL);
+
 
 if(isset($_POST['name']) && isset($_POST['message'])){
     $data = array( 

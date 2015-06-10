@@ -1,7 +1,17 @@
-/**
- * @author tachi
- */
 $(document).ready(function(){
+	//Format date to match MySql format
+	function getDate(){
+		var date;
+		date = new Date;
+		date = date.getUTCFullYear() + '-' +
+				('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
+		 		('00' + (date.getUTCDate() + 1)).slice(-2) + ' ' +
+		 		('00' + (date.getUTCHours() + 1)).slice(-2) + ':' +
+		 		('00' + (date.getUTCMinutes() + 1)).slice(-2) + ':' +
+		 		('00' + (date.getUTCSeconds() + 1)).slice(-2);
+		return date;
+	}
+	
 	$('#submit').on('click', function(){
 		var name = $('#name').val();
 		var message = $('#message').val();
@@ -13,7 +23,7 @@ $(document).ready(function(){
 			alert('Please enter in your name and message');
 		} else {
 			$.ajax({
-				type: "POST",
+				type: "GET",
 				url: "shoutbox.php",
 				data: dataString,
 				cache: false,
@@ -32,16 +42,3 @@ $(document).ready(function(){
 		return false;
 	});
 });
-
-//Format date to match MySql format
-function getDate(){
-	var date;
-	date = new Date;
-	date = date.getUTCFullYear() + '-' +
-			('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
-	 		('00' + (date.getUTCDate() + 1)).slice(-2) + ' ' +
-	 		('00' + (date.getUTCHours() + 1)).slice(-2) + ':' +
-	 		('00' + (date.getUTCMinutes() + 1)).slice(-2) + ':' +
-	 		('00' + (date.getUTCSeconds() + 1)).slice(-2);
-	return date;
-}
